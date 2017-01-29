@@ -33,15 +33,15 @@ dataOut[]={15,16}			//Error data- 15 set to HIGH: Failure to fully close
 							//		 15 & 16 set to High: Seporation Successful (because sometimes two wrongs do make a right)
 
 
-int red=LED[0];				//
-int blue=LED[1];			//assign LED color variables
-int green=LED[2];			//
+uint8_t red=LED[0];				//
+uint8_t blue=LED[1];			//assign LED color variables
+uint8_t green=LED[2];			//
 
 
 //////////////////////////////Function Prototyping//////////////////////////////
-void standby(int check);
-void clamp(int speed, int coilAlt);
-void deploy(int speed, int coilAlt);
+void standby(uint8_t check);
+void clamp(uint16_t speed, uint8_t coilAlt);
+void deploy(uint16_t speed, uint8_t coilAlt);
 
 
 
@@ -52,7 +52,7 @@ void setup()
 {
 	
 	//Set mode for all pins
-	for(int i=0;i<5;i++)
+	for(uint8_t i=0;i<5;i++)
 	{
 		pinMode(dataIn[i],INPUT);
 		if(i<3)
@@ -82,8 +82,8 @@ Purpose: 		Waiting cycle to poll for inputs
 
 data I/O:
 INPUT:
-	int check-			Pin to check for when to exit standby
-	int flightReady-	Set to run status checks when on launch tower and in flight
+	uint8_t check-			Pin to check for when to exit standby
+	uint8_t flightReady-	Set to run status checks when on launch tower and in flight
 	
 description:
 
@@ -91,10 +91,10 @@ Runs a loop that turns the blue LED off and on.
 If the Clamp is not fully closed, the Red LED is
 solid on and error 1 is sent to the flight computer
 ===================================================================*/
-void standby(int check, int flightReady)
+void standby(uint8_t check, uint8_t flightReady)
 {
-	const int STANDBY_BLINK = 200;									
-	int flash=STANDBY_BLINK*4;	
+	const uint16_t STANDBY_BLINK = 200;									
+	uint16_t flash=STANDBY_BLINK*4;	
 	
 	if(flightReady)
 	{
@@ -127,6 +127,11 @@ void standby(int check, int flightReady)
 		flash--;
 	}
 	digitalWrite(blue,LOW);
+	for(uint8_t i=0; i <3; i++)
+	{
+		flash=STANDBY_BLINK*4;
+		while(STANDBY_BLINK)
+	}
 }
 
 /*===================================================================
@@ -135,8 +140,8 @@ Purpose: 		Clamps the seporation ring into flight position
 
 data I/O:
 Inputs:
-	int speed			controles the rate at which the motor turns
-	int coilAlt			Set to the first coil that will be energized when the prgram starts
+	uint8_t speed			controles the rate at which the motor turns
+	uint8_t coilAlt			Set to the first coil that will be energized when the prgram starts
 
 description:
 Coil levels (V)
@@ -167,10 +172,10 @@ C:[ 0]->activeLow is set to HIGH->[-1]
 
 ===================================================================*/
 
-void clamp(int speed, int coilAlt)
+void clamp(uint8_t speed, uint8_t coilAlt)
 {
-	int activeHigh;
-	int activeLow;
+	uint8_t activeHigh;
+	uint8_t activeLow;
 	
 	digitalWrite(red,HIGH);
 	
@@ -179,7 +184,7 @@ void clamp(int speed, int coilAlt)
 	activeLow=coilAlt;
 	coilAlt=(coilAlt+1)%3;
 	
-	for(int i=0; i<revCyc; i++)
+	for(uint8_t i=0; i<revCyc; i++)
 	{
 		//Turn off current state and set up for PMW to next motor possition
 		if(i%2==0)
@@ -196,7 +201,7 @@ void clamp(int speed, int coilAlt)
 		}
 		
 		//Run PMW to turn motor to next possition.
-		for(int wait=speed; wait>=0;wait--)
+		for(uint16_t wait=speed; wait>=0;wait--)
 		{
 			if(wait%10=0)
 			{
@@ -219,8 +224,8 @@ Purpose: 		Releases clamp at apogy signal from telemetry
 
 data I/O:
 Inputs:
-	int speed			controles the rate at which the motor turns
-	int coilAlt			Set to the first coil that will be energized when the prgram starts
+	uint8_t speed			controles the rate at which the motor turns
+	uint8_t coilAlt			Set to the first coil that will be energized when the prgram starts
 
 description:
 
@@ -235,10 +240,10 @@ See control principle for clamp()
 the difference is coilAlt's rotation is set to (coilAlt+2)%3
 ===================================================================*/
 
-void deploy(int speed, int coilAlt)
+void deploy(uint8_t speed, uint8_t coilAlt)
 {	
-	int activeHigh;
-	int activeLow;
+	uint8_t activeHigh;
+	uint8_t activeLow;
 	
 	digitalWrite(red,HIGH);
 	
@@ -246,7 +251,7 @@ void deploy(int speed, int coilAlt)
 	activeHigh=coilAlt;
 	coilAlt=(coilAlt+2)%3;
 	
-	for(int i=0; i<revCyc; i++)
+	for(uint8_t i=0; i<revCyc; i++)
 	{
 		if(i%2==0)
 		{
@@ -260,7 +265,7 @@ void deploy(int speed, int coilAlt)
 			coilAlt=(coilAlt+2)%3;
 			digitalWrite(mLow[coilAlt],LOW);
 		}
-		for(int wait=speed; wait>=0;wait--)
+		for(uint16_t wait=speed; wait>=0;wait--)
 		{
 			digitalWrite(mHigh[activeHigh],HIGH);
 			digitalWrite(mLow[activeLow],HIGH);
