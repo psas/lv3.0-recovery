@@ -4,7 +4,7 @@ PROGRAMER:	Eric Ruhl
 DATE:		12/29/2016
 
 Purpose:	
-	Opporate the recovery system of LV4, namely the eNSR
+	Operated the recovery system of LV3, namely the eNSR
 
 Design:
 	
@@ -30,7 +30,7 @@ dataIn[]={10,11,12,13,14};	//10-Apogee signal from Telemetry
 
 dataOut[]={15,16}			//Error data- 15 set to HIGH: Failure to fully close
 							//			  16 set to HIGH: Failure to fully open
-							//		 15 & 16 set to High: Seporation Successful (because sometimes two wrongs do make a right)
+							//		 15 & 16 set to High: Separation Successful (because sometimes two wrongs do make a right)
 
 
 uint8_t red=LED[0];				//
@@ -39,12 +39,9 @@ uint8_t green=LED[2];			//
 
 
 //////////////////////////////Function Prototyping//////////////////////////////
-void standby(uint8_t check);
+void standby(uint8_t check, uint8_t flightReady);
 void clamp(uint16_t speed, uint8_t coilAlt);
 void deploy(uint16_t speed, uint8_t coilAlt);
-
-
-
 
 //////////////////////////////Function Mainline//////////////////////////////
 
@@ -68,7 +65,24 @@ void setup()
 	}
 	
 	//Run standby loop and wait for interupt
-	standby(dataIn[1]);
+	standby(dataIn[1], 0);
+	clamp(1200, 0);
+	standby(dataIn[0], 1);
+	deploy(600, 0);
+	
+	//Check for successful separation
+	if(digitalRead(dataIn[3]))
+	{
+		//if separation fails, signal error and run hard deploy
+		ditgitalWrite(dataOut[1], HIGH);
+		deploy(1200, 0);
+	}
+	else
+	{
+		//signal success
+		digitalWrite(dataOut[0], HIGH);
+		digitalWrite(dataOut[1], HIGH);
+	}
 }
 
 
@@ -93,24 +107,31 @@ solid on and error 1 is sent to the flight computer
 ===================================================================*/
 void standby(uint8_t check, uint8_t flightReady)
 {
-	const uint16_t STANDBY_BLINK = 200;									
+	//set blink rate
+	const uint16_t STANDBY_BLINK = 8000;									
 	uint16_t flash=STANDBY_BLINK*4;	
 	
+	//Outputs visual to signify separation staging ready
 	if(flightReady)
 	{
 		digitalWrite(green,HIGH);
 	}
+	
 	while(digitalRead(check)==LOW)
 	{
 		if(flightReady)
 		{
+			//When standing by for release, check for full clamp condition
 			if(dataIn[2])
 			{
+				//If clamp is not fully closed, send error signal
 				digitalWrite(red,HIGH);
 				digitalWrite(green,LOW);
 				digitalWrite(dataOut[0],HIGH);
 			}
 		}
+		
+		//Flashes blue to show system is waiting
 		if(flash==STANDBY_BLINK)
 		{
 			digitalWrite(blue,HIGH);
@@ -127,21 +148,38 @@ void standby(uint8_t check, uint8_t flightReady)
 		flash--;
 	}
 	digitalWrite(blue,LOW);
-	for(uint8_t i=0; i <3; i++)
+	
+	//Before clamping red LED flashes 3 times
+	if(!flightReady)
 	{
-		flash=STANDBY_BLINK*4;
-		while(STANDBY_BLINK)
+		for(uint8_t i=0; i <3; i++)
+		{
+			flash=STANDBY_BLINK*4;
+			while(flash>0)
+			{
+				flash--;
+				if(flash == STANDBY_BLINK)
+				{
+					digitalWrite(red, HIGH);
+				}
+				else if(flash == 0)
+				{
+					flash=STANDBY_BLINK*4;
+					digitalWrite(red, LOW);
+				}
+			}
+		}
 	}
 }
 
 /*===================================================================
 Function: 		clamp()
-Purpose: 		Clamps the seporation ring into flight position
+Purpose: 		Clamps the separation ring into flight position
 
 data I/O:
 Inputs:
-	uint8_t speed			controles the rate at which the motor turns
-	uint8_t coilAlt			Set to the first coil that will be energized when the prgram starts
+	uint8_t speed			controls the rate at which the motor turns
+	uint8_t coilAlt			Set to the first coil that will be energized when the program starts
 
 description:
 Coil levels (V)
@@ -186,7 +224,7 @@ void clamp(uint8_t speed, uint8_t coilAlt)
 	
 	for(uint8_t i=0; i<revCyc; i++)
 	{
-		//Turn off current state and set up for PMW to next motor possition
+		//Turn off current state and set up for PMW to next motor position
 		if(i%2==0)
 		{
 			activeHigh=coilAlt;
@@ -200,7 +238,7 @@ void clamp(uint8_t speed, uint8_t coilAlt)
 			digitalWrite(mLow[coilAlt],LOW);
 		}
 		
-		//Run PMW to turn motor to next possition.
+		//Run PMW to turn motor to next position.
 		for(uint16_t wait=speed; wait>=0;wait--)
 		{
 			if(wait%10=0)
@@ -220,12 +258,12 @@ void clamp(uint8_t speed, uint8_t coilAlt)
 
 /*===================================================================
 Function: 		deploy()
-Purpose: 		Releases clamp at apogy signal from telemetry
+Purpose: 		Releases clamp at apogee signal from telemetry
 
 data I/O:
 Inputs:
-	uint8_t speed			controles the rate at which the motor turns
-	uint8_t coilAlt			Set to the first coil that will be energized when the prgram starts
+	uint8_t speed			controls the rate at which the motor turns
+	uint8_t coilAlt			Set to the first coil that will be energized when the program starts
 
 description:
 
@@ -253,6 +291,7 @@ void deploy(uint8_t speed, uint8_t coilAlt)
 	
 	for(uint8_t i=0; i<revCyc; i++)
 	{
+		//cycle active coils
 		if(i%2==0)
 		{
 			activeHigh=coilAlt;
@@ -265,6 +304,8 @@ void deploy(uint8_t speed, uint8_t coilAlt)
 			coilAlt=(coilAlt+2)%3;
 			digitalWrite(mLow[coilAlt],LOW);
 		}
+		
+		//run coils at 100% PMW
 		for(uint16_t wait=speed; wait>=0;wait--)
 		{
 			digitalWrite(mHigh[activeHigh],HIGH);
