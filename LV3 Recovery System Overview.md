@@ -1,7 +1,7 @@
 
 # Design and Development of the LV3 Recovery System
 
-![Figure 1](files/Sketch_%20Deployment_Design.JPG){ width=50% height=50% }
+![Figure 1](Sketch_%20Deployment_Design.JPG){ width=50% height=50% }
 
 #### Marie House and Calvin Young
 ### Portland State Aerospace Society
@@ -22,8 +22,8 @@ The new recovery design remains a two-stage system, incorporating a new five foo
 
 A rough sketch of the overall design is shown below in Figures 2 and 3. 
 
-![Figure 2](files/Sketch_%20Top-Level_Design.JPG){ width=50% height=50% }
-![Figure 3](files/overall_sketch.jpg){ width=50% height=50% }
+![Figure 2](Sketch_%20Top-Level_Design.JPG){ width=50% height=50% }
+![Figure 3](overall_sketch.jpg){ width=50% height=50% }
 
 Where the order of operations are as follows:
 
