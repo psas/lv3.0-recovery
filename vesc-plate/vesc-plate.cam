@@ -1,0 +1,64 @@
+{
+    "author": {
+        "email": "adg@ece.pdx.edu",
+        "name": "Andrew Greenberg"
+    },
+    "description": {
+        "EN": "CAM for VESC plate - makes only dimension outline and Excellon drills."
+    },
+    "output_type": "directory",
+    "outputs": [
+        {
+            "format_specifier": {
+                "decimal": 3,
+                "integer": 3
+            },
+            "output_type": "drill",
+            "outputs": [
+                {
+                    "drills": {
+                        "NPTH": true,
+                        "PTH": true,
+                        "VIA": true
+                    },
+                    "filename_format": "vesc-plate-drill.xln",
+                    "layers": {
+                        "from": 1,
+                        "to": 16
+                    },
+                    "name": "Excellon",
+                    "type": "excellon"
+                }
+            ]
+        },
+        {
+            "filename_prefix": "gerber",
+            "format_specifier": {
+                "decimal": 4,
+                "integer": 3
+            },
+            "generate_job_file": true,
+            "output_type": "gerber",
+            "outputs": [
+                {
+                    "board_outline": true,
+                    "config": {
+                        "file_function": "Profile",
+                        "plating": "non-plated"
+                    },
+                    "filename_format": "vesc-plate-outline.gbr",
+                    "layers": [
+                    ],
+                    "milling": true,
+                    "polarity": "positive",
+                    "type": "gerber_layer"
+                }
+            ],
+            "version": "X2"
+        }
+    ],
+    "timestamp": "2018-02-14T00:57:58",
+    "type": "EAGLE CAM job",
+    "units": "metric",
+    "version": "8.6.0"
+}
