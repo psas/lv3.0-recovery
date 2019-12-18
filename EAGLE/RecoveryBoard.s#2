@@ -12937,12 +12937,16 @@ diodes with different pinning are available&lt;p&gt;&lt;author&gt;AAL Eindhoven 
 <segment>
 <wire x1="-142.24" y1="-22.86" x2="-142.24" y2="-7.62" width="0.1524" layer="91"/>
 <label x="-147.32" y="-5.08" size="1.778" layer="95"/>
+<wire x1="-142.24" y1="-7.62" x2="-142.24" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="-142.24" y1="-7.62" x2="-63.5" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="-63.5" y1="-7.62" x2="-63.5" y2="-93.98" width="0.1524" layer="91"/>
+<junction x="-142.24" y="-7.62"/>
 <wire x1="-63.5" y1="-93.98" x2="60.96" y2="-93.98" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="-93.98" x2="60.96" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PA3"/>
-<wire x1="60.96" y1="12.7" x2="20.32" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="12.7" x2="35.56" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="12.7" x2="38.1" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="12.7" x2="38.1" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SENSOR2" class="0">
