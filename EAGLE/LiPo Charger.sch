@@ -11002,6 +11002,11 @@ diodes with different pinning are available&lt;p&gt;&lt;author&gt;AAL Eindhoven 
 <text x="-27.94" y="-63.5" size="5.08" layer="95">Section 4</text>
 <text x="-86.36" y="-17.78" size="3.81" layer="95">Section 6</text>
 <text x="33.02" y="-93.98" size="3.81" layer="95">Section 3</text>
+<wire x1="-137.16" y1="-101.6" x2="-137.16" y2="175.26" width="0.1524" layer="95"/>
+<wire x1="-137.16" y1="175.26" x2="215.9" y2="175.26" width="0.1524" layer="95"/>
+<wire x1="215.9" y1="175.26" x2="215.9" y2="-101.6" width="0.1524" layer="95"/>
+<wire x1="215.9" y1="-101.6" x2="-137.16" y2="-101.6" width="0.1524" layer="95"/>
+<text x="-127" y="162.56" size="6.4516" layer="95">LiPo Charger</text>
 </plain>
 <instances>
 <instance part="U1" gate="A" x="0" y="0" smashed="yes">
