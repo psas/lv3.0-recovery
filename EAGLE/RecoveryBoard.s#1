@@ -12190,6 +12190,7 @@ diodes with different pinning are available&lt;p&gt;&lt;author&gt;AAL Eindhoven 
 <text x="81.28" y="104.14" size="5.08" layer="96">Need Motor and LA Terminal blocks</text>
 <text x="81.28" y="99.06" size="5.08" layer="95">need umbilical connection </text>
 <text x="81.28" y="111.76" size="6.4516" layer="95">need 12 V supply</text>
+<text x="-101.6" y="43.18" size="2.54" layer="95">this was in diagram?</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="0" y="0" smashed="yes">
