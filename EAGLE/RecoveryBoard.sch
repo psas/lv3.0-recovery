@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.1">
+<eagle version="9.4.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8784,63 +8784,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <attribute name="BUILT_BY" value="EMA_UL_Team" constant="no"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="UWT1H101MNL1GS" constant="no"/>
 <attribute name="VENDOR" value="Nichicon" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="BPR-301">
-<packages>
-<package name="BPR-301">
-<wire x1="0" y1="0" x2="8.9" y2="0" width="0.127" layer="21"/>
-<wire x1="8.9" y1="0" x2="17.8" y2="0" width="0.127" layer="21"/>
-<wire x1="17.8" y1="0" x2="17.8" y2="5" width="0.127" layer="21"/>
-<wire x1="17.8" y1="5" x2="8.9" y2="5" width="0.127" layer="21"/>
-<wire x1="8.9" y1="5" x2="0" y2="5" width="0.127" layer="21"/>
-<wire x1="0" y1="5" x2="0" y2="0" width="0.127" layer="21"/>
-<pad name="AN" x="2.53" y="2.5" drill="0.6"/>
-<pad name="CAT" x="5.07" y="2.5" drill="0.6"/>
-<pad name="EMIT" x="12.73" y="2.5" drill="0.6"/>
-<pad name="COLL" x="15.27" y="2.5" drill="0.6"/>
-<wire x1="8.9" y1="5" x2="8.9" y2="0" width="0.0762" layer="21" style="shortdash"/>
-<text x="1.27" y="5.08" size="1.27" layer="21">DIODE</text>
-<text x="12.7" y="5.08" size="1.27" layer="21">NPN</text>
-</package>
-</packages>
-<symbols>
-<symbol name="BPR-301">
-<pin name="CATHODE" x="40.64" y="0" length="middle" rot="R180"/>
-<pin name="EMITTER" x="40.64" y="5.08" length="middle" rot="R180"/>
-<pin name="ANODE" x="0" y="0" length="middle"/>
-<pin name="COLLECTOR" x="0" y="5.08" length="middle"/>
-<wire x1="35.56" y1="-2.54" x2="35.56" y2="15.24" width="0.254" layer="94"/>
-<wire x1="35.56" y1="15.24" x2="5.08" y2="15.24" width="0.254" layer="94"/>
-<wire x1="5.08" y1="15.24" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-2.54" x2="35.56" y2="-2.54" width="0.254" layer="94"/>
-<text x="7.62" y="12.7" size="3.81" layer="95" rot="MR180">BPR-301</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="BPR-301">
-<gates>
-<gate name="G$1" symbol="BPR-301" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="BPR-301">
-<connects>
-<connect gate="G$1" pin="ANODE" pad="AN"/>
-<connect gate="G$1" pin="CATHODE" pad="CAT"/>
-<connect gate="G$1" pin="COLLECTOR" pad="COLL"/>
-<connect gate="G$1" pin="EMITTER" pad="EMIT"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DATASHEET" value="http://americanbrightled.com/pdffiles/infrared/BPR-301.pdf"/>
-<attribute name="DIS" value="DigiKey" constant="no"/>
-<attribute name="DPN" value=" BPR-301-ND" constant="no"/>
-<attribute name="MPN" value="BPR-301" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -24009,6 +23952,101 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 </deviceset>
 </devicesets>
 </library>
+<library name="BPR-301">
+<packages>
+<package name="BPR-301">
+<wire x1="0" y1="0" x2="8.9" y2="0" width="0.127" layer="21"/>
+<wire x1="8.9" y1="0" x2="17.8" y2="0" width="0.127" layer="21"/>
+<wire x1="17.8" y1="0" x2="17.8" y2="5" width="0.127" layer="21"/>
+<wire x1="17.8" y1="5" x2="8.9" y2="5" width="0.127" layer="21"/>
+<wire x1="8.9" y1="5" x2="0" y2="5" width="0.127" layer="21"/>
+<wire x1="0" y1="5" x2="0" y2="0" width="0.127" layer="21"/>
+<pad name="AN" x="2.53" y="2.5" drill="0.6"/>
+<pad name="CAT" x="5.07" y="2.5" drill="0.6"/>
+<pad name="EMIT" x="12.73" y="2.5" drill="0.6"/>
+<pad name="COLL" x="15.27" y="2.5" drill="0.6"/>
+<wire x1="8.9" y1="5" x2="8.9" y2="0" width="0.0762" layer="21" style="shortdash"/>
+<text x="1.27" y="5.08" size="1.27" layer="21">DIODE</text>
+<text x="12.7" y="5.08" size="1.27" layer="21">NPN</text>
+</package>
+</packages>
+<symbols>
+<symbol name="BPR-301">
+<pin name="CATH" x="-4" y="-4" visible="pad" length="point" rot="R90"/>
+<pin name="EMIT" x="4" y="-4" visible="pad" length="point" rot="R90"/>
+<pin name="ANOD" x="-10" y="-4" visible="pad" length="point" rot="R90"/>
+<pin name="COLL" x="10" y="-4" visible="pad" length="point" rot="R90"/>
+<wire x1="-6" y1="2" x2="-6" y2="0" width="0.1524" layer="94"/>
+<polygon width="0.1524" layer="94">
+<vertex x="-6" y="0"/>
+<vertex x="-8" y="2"/>
+<vertex x="-8" y="-2"/>
+</polygon>
+<wire x1="-6" y1="0" x2="-6" y2="-2" width="0.1524" layer="94"/>
+<wire x1="-6" y1="0" x2="-4" y2="0" width="0.1524" layer="94"/>
+<wire x1="-8" y1="0" x2="-10" y2="0" width="0.1524" layer="94"/>
+<wire x1="-10" y1="-4" x2="-10" y2="0" width="0.1524" layer="94"/>
+<wire x1="-4" y1="0" x2="-4" y2="-4" width="0.1524" layer="94"/>
+<wire x1="4" y1="-4" x2="4" y2="0" width="0.1524" layer="94"/>
+<wire x1="10" y1="-4" x2="10" y2="0" width="0.1524" layer="94"/>
+<wire x1="5" y1="-2" x2="6" y2="-2" width="0.1524" layer="94"/>
+<wire x1="6" y1="-2" x2="8" y2="-2" width="0.1524" layer="94"/>
+<wire x1="8" y1="-2" x2="9" y2="-2" width="0.1524" layer="94"/>
+<wire x1="6" y1="-2" x2="5" y2="0" width="0.1524" layer="94"/>
+<polygon width="0.1524" layer="94">
+<vertex x="5" y="0"/>
+<vertex x="4.842" y="-0.762"/>
+<vertex x="5.684" y="-0.27"/>
+</polygon>
+<wire x1="8" y1="-2" x2="9" y2="0" width="0.1524" layer="94"/>
+<wire x1="9" y1="0" x2="10" y2="0" width="0.1524" layer="94"/>
+<wire x1="4" y1="0" x2="5" y2="0" width="0.1524" layer="94"/>
+<wire x1="-8" y1="7" x2="8" y2="7" width="0.1524" layer="94"/>
+<wire x1="8" y1="7" x2="8" y2="8" width="0.1524" layer="94"/>
+<wire x1="8" y1="8" x2="-8" y2="8" width="0.1524" layer="94"/>
+<wire x1="-8" y1="8" x2="-8" y2="7" width="0.1524" layer="94"/>
+<wire x1="-5" y1="3" x2="-2" y2="6" width="0.1524" layer="94"/>
+<wire x1="2" y1="6" x2="5" y2="3" width="0.1524" layer="94"/>
+<polygon width="0.1524" layer="94">
+<vertex x="-2" y="6"/>
+<vertex x="-2" y="5"/>
+<vertex x="-3" y="6"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="5" y="3"/>
+<vertex x="4" y="3"/>
+<vertex x="5" y="4"/>
+</polygon>
+<text x="-6" y="11.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6" y="9" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BPR-301">
+<gates>
+<gate name="BPR-301" symbol="BPR-301" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="BPR-301">
+<connects>
+<connect gate="BPR-301" pin="ANOD" pad="AN"/>
+<connect gate="BPR-301" pin="CATH" pad="CAT"/>
+<connect gate="BPR-301" pin="COLL" pad="COLL"/>
+<connect gate="BPR-301" pin="EMIT" pad="EMIT"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DATASHEET" value="http://americanbrightled.com/pdffiles/infrared/BPR-301.pdf"/>
+<attribute name="DIS" value="DigiKey" constant="no"/>
+<attribute name="DPN" value=" BPR-301-ND" constant="no"/>
+<attribute name="MPN" value="BPR-301" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -24027,8 +24065,6 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <part name="C2" library="UWT1H101MNL1GS" deviceset="UWT1H101MNL1GS" device=""/>
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="U$1" library="BPR-301" deviceset="BPR-301" device=""/>
-<part name="U$2" library="BPR-301" deviceset="BPR-301" device=""/>
 <part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="42"/>
 <part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="105"/>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="105"/>
@@ -24203,11 +24239,13 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <attribute name="MPN" value="RC1005F6653CS"/>
 </part>
 <part name="GND39" library="supply1" deviceset="GND" device=""/>
-<part name="VBUS1" library="oresat-supplies" deviceset="VBUS" device=""/>
+<part name="VUMB" library="oresat-supplies" deviceset="VBUS" device="" value="VUMB"/>
 <part name="SUPPLY31" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="3.3V" device=""/>
 <part name="SUPPLY32" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="3.3V" device=""/>
 <part name="SUPPLY33" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="3.3V" device=""/>
 <part name="SUPPLY34" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="3.3V" device=""/>
+<part name="SENSOR" library="BPR-301" deviceset="BPR-301" device=""/>
+<part name="SENSOR2" library="BPR-301" deviceset="BPR-301" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -24379,7 +24417,7 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <instance part="GND39" gate="1" x="81.28" y="222.25" smashed="yes">
 <attribute name="VALUE" x="78.74" y="219.71" size="1.778" layer="96"/>
 </instance>
-<instance part="VBUS1" gate="1" x="48.26" y="255.27" smashed="yes">
+<instance part="VUMB" gate="1" x="48.26" y="255.27" smashed="yes">
 <attribute name="VALUE" x="48.26" y="255.524" size="1.778" layer="96" align="bottom-center"/>
 </instance>
 </instances>
@@ -24582,7 +24620,7 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <pinref part="U10" gate="G$1" pin="VIN"/>
 <wire x1="69.85" y1="250.19" x2="81.28" y2="250.19" width="0.1524" layer="91"/>
 <junction x="81.28" y="250.19"/>
-<pinref part="VBUS1" gate="1" pin="VBUS"/>
+<pinref part="VUMB" gate="1" pin="VBUS"/>
 </segment>
 </net>
 </nets>
@@ -25557,8 +25595,6 @@ TSINY TS37GB60-BL3625</text>
 </instance>
 <instance part="SUPPLY3" gate="GND" x="358.14" y="172.72" smashed="yes"/>
 <instance part="SUPPLY4" gate="GND" x="365.76" y="172.72" smashed="yes"/>
-<instance part="U$1" gate="G$1" x="81.28" y="127" smashed="yes"/>
-<instance part="U$2" gate="G$1" x="81.28" y="157.48" smashed="yes"/>
 <instance part="R7" gate="G$1" x="63.5" y="157.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="67.31" y="155.9814" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="67.31" y="153.162" size="1.778" layer="96" rot="R180"/>
@@ -25633,6 +25669,14 @@ TSINY TS37GB60-BL3625</text>
 <instance part="SUPPLY34" gate="G$1" x="54.61" y="135.89" smashed="yes">
 <attribute name="VALUE" x="54.61" y="138.684" size="1.778" layer="96" align="bottom-center"/>
 </instance>
+<instance part="SENSOR" gate="BPR-301" x="99.06" y="166.37" smashed="yes">
+<attribute name="NAME" x="93.06" y="177.91" size="1.778" layer="95"/>
+<attribute name="VALUE" x="93.06" y="175.37" size="1.778" layer="96"/>
+</instance>
+<instance part="SENSOR2" gate="BPR-301" x="99.06" y="137.16" smashed="yes">
+<attribute name="NAME" x="93.06" y="148.7" size="1.778" layer="95"/>
+<attribute name="VALUE" x="93.06" y="146.16" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -25663,20 +25707,16 @@ TSINY TS37GB60-BL3625</text>
 <pinref part="C1" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="EMITTER"/>
 <wire x1="121.92" y1="162.56" x2="152.4" y2="162.56" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="162.56" x2="152.4" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="SUPPLY5" gate="GND" pin="GND"/>
-<pinref part="U$1" gate="G$1" pin="EMITTER"/>
 <wire x1="152.4" y1="157.48" x2="152.4" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="132.08" x2="152.4" y2="127" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="127" x2="152.4" y2="109.22" width="0.1524" layer="91"/>
 <junction x="152.4" y="132.08"/>
-<pinref part="U$1" gate="G$1" pin="CATHODE"/>
 <wire x1="121.92" y1="132.08" x2="152.4" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="127" x2="121.92" y2="127" width="0.1524" layer="91"/>
 <junction x="152.4" y="127"/>
-<pinref part="U$2" gate="G$1" pin="CATHODE"/>
 <wire x1="121.92" y1="157.48" x2="152.4" y2="157.48" width="0.1524" layer="91"/>
 <junction x="152.4" y="157.48"/>
 <label x="152.4" y="142.24" size="1.6764" layer="95" rot="R90"/>
@@ -25774,20 +25814,17 @@ TSINY TS37GB60-BL3625</text>
 <net name="N$2" class="0">
 <segment>
 <pinref part="R8" gate="G$1" pin="1"/>
-<pinref part="U$2" gate="G$1" pin="COLLECTOR"/>
 <wire x1="68.58" y1="162.56" x2="81.28" y2="162.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="ANODE"/>
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="81.28" y1="157.48" x2="68.58" y2="157.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="COLLECTOR"/>
 <pinref part="R9" gate="G$1" pin="1"/>
 <wire x1="81.28" y1="132.08" x2="68.58" y2="132.08" width="0.1524" layer="91"/>
 </segment>
@@ -25795,7 +25832,6 @@ TSINY TS37GB60-BL3625</text>
 <net name="N$14" class="0">
 <segment>
 <pinref part="R10" gate="G$1" pin="1"/>
-<pinref part="U$1" gate="G$1" pin="ANODE"/>
 <wire x1="68.58" y1="127" x2="81.28" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
