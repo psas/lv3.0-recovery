@@ -21065,6 +21065,94 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 </deviceset>
 </devicesets>
 </library>
+<library name="U--MP26123DR-LF-Z--LiPo Charger">
+<packages>
+<package name="MP26123DR-LF-Z">
+<smd name="EP" x="0" y="0" dx="2.3" dy="2.3" layer="1"/>
+<smd name="VCC" x="-1.9" y="1" dx="1" dy="0.35" layer="1"/>
+<smd name="NTC" x="-1.9" y="0.35" dx="1" dy="0.35" layer="1"/>
+<smd name="~ACOK" x="-1.9" y="-0.3" dx="1" dy="0.35" layer="1"/>
+<smd name="~CHGOK" x="-1.9" y="-0.95" dx="1" dy="0.35" layer="1"/>
+<smd name="GND" x="1.9" y="1" dx="1" dy="0.35" layer="1"/>
+<smd name="CSP" x="1.9" y="0.35" dx="1" dy="0.35" layer="1"/>
+<smd name="BATT" x="1.9" y="-0.3" dx="1" dy="0.35" layer="1"/>
+<smd name="COMPI" x="1.9" y="-0.95" dx="1" dy="0.35" layer="1"/>
+<smd name="VREF33" x="-1" y="-1.9" dx="0.35" dy="1" layer="1"/>
+<smd name="~EN" x="-0.35" y="-1.9" dx="0.35" dy="1" layer="1"/>
+<smd name="CELLS" x="0.3" y="-1.9" dx="0.35" dy="1" layer="1"/>
+<smd name="COMPV" x="0.95" y="-1.9" dx="0.35" dy="1" layer="1"/>
+<smd name="VIN" x="-1" y="1.9" dx="0.35" dy="1" layer="1"/>
+<smd name="SW" x="-0.35" y="1.9" dx="0.35" dy="1" layer="1"/>
+<smd name="BST" x="0.3" y="1.9" dx="0.35" dy="1" layer="1"/>
+<smd name="TMR" x="0.95" y="1.9" dx="0.35" dy="1" layer="1"/>
+<wire x1="-3" y1="-3" x2="-3" y2="3" width="0.1016" layer="51"/>
+<wire x1="-3" y1="3" x2="3" y2="3" width="0.1016" layer="51"/>
+<wire x1="3" y1="3" x2="3" y2="-3" width="0.1016" layer="51"/>
+<wire x1="3" y1="-3" x2="-3" y2="-3" width="0.1016" layer="51"/>
+<text x="-2.667" y="0.889" size="0.254" layer="51">1</text>
+<text x="-1.143" y="2.54" size="0.254" layer="51">16</text>
+<text x="-1.397" y="-2.794" size="0.254" layer="51">MP26123DR-LF-Z</text>
+</package>
+</packages>
+<symbols>
+<symbol name="MP26123DR-LF-Z">
+<pin name="VCC" x="-13.97" y="3.81" visible="pad" length="middle"/>
+<pin name="NTC" x="-13.97" y="1.27" visible="pad" length="middle"/>
+<pin name="~ACOK" x="-13.97" y="-1.27" visible="pad" length="middle"/>
+<pin name="~CHGOK" x="-13.97" y="-3.81" visible="pad" length="middle"/>
+<pin name="VREF33" x="-3.81" y="-13.97" visible="pad" length="middle" rot="R90"/>
+<pin name="~EN" x="-1.27" y="-13.97" visible="pad" length="middle" rot="R90"/>
+<pin name="CELLS" x="1.27" y="-13.97" visible="pad" length="middle" rot="R90"/>
+<pin name="COMPV" x="3.81" y="-13.97" visible="pad" length="middle" rot="R90"/>
+<pin name="COMPI" x="13.97" y="-3.81" visible="pad" length="middle" rot="R180"/>
+<pin name="BATT" x="13.97" y="-1.27" visible="pad" length="middle" rot="R180"/>
+<pin name="CSP" x="13.97" y="1.27" visible="pad" length="middle" rot="R180"/>
+<pin name="GND" x="13.97" y="3.81" visible="pad" length="middle" rot="R180"/>
+<pin name="TMR" x="3.81" y="13.97" visible="pad" length="middle" rot="R270"/>
+<pin name="BST" x="1.27" y="13.97" visible="pad" length="middle" rot="R270"/>
+<pin name="SW" x="-1.27" y="13.97" visible="pad" length="middle" rot="R270"/>
+<pin name="VIN" x="-3.81" y="13.97" visible="pad" length="middle" rot="R270"/>
+<wire x1="-8.89" y1="8.89" x2="8.89" y2="8.89" width="0.254" layer="94"/>
+<wire x1="8.89" y1="8.89" x2="8.89" y2="-8.89" width="0.254" layer="94"/>
+<wire x1="8.89" y1="-8.89" x2="-8.89" y2="-8.89" width="0.254" layer="94"/>
+<wire x1="-8.89" y1="-8.89" x2="-8.89" y2="8.89" width="0.254" layer="94"/>
+<text x="0" y="2.54" size="0.8128" layer="95" align="center">&gt;NAME</text>
+<text x="0" y="0" size="0.8128" layer="96" align="center">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MP26123DR-LF-Z">
+<gates>
+<gate name="G$1" symbol="MP26123DR-LF-Z" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MP26123DR-LF-Z">
+<connects>
+<connect gate="G$1" pin="BATT" pad="BATT"/>
+<connect gate="G$1" pin="BST" pad="BST"/>
+<connect gate="G$1" pin="CELLS" pad="CELLS"/>
+<connect gate="G$1" pin="COMPI" pad="COMPI"/>
+<connect gate="G$1" pin="COMPV" pad="COMPV"/>
+<connect gate="G$1" pin="CSP" pad="CSP"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="NTC" pad="NTC"/>
+<connect gate="G$1" pin="SW" pad="SW"/>
+<connect gate="G$1" pin="TMR" pad="TMR"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+<connect gate="G$1" pin="VIN" pad="VIN"/>
+<connect gate="G$1" pin="VREF33" pad="VREF33"/>
+<connect gate="G$1" pin="~ACOK" pad="~ACOK"/>
+<connect gate="G$1" pin="~CHGOK" pad="~CHGOK"/>
+<connect gate="G$1" pin="~EN" pad="~EN"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -21242,6 +21330,7 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <attribute name="MPN" value="RC1005F6653CS"/>
 </part>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
+<part name="U$5" library="U--MP26123DR-LF-Z--LiPo Charger" deviceset="MP26123DR-LF-Z" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -21756,8 +21845,12 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <attribute name="SHEET" x="538.48" y="1.27" size="2.54" layer="94"/>
 <attribute name="DRAWING_NAME" x="469.9" y="19.05" size="2.54" layer="94"/>
 </instance>
-<instance part="VUMB1" gate="1" x="312.42" y="254" smashed="yes">
-<attribute name="VALUE" x="309.88" y="248.92" size="1.778" layer="96" rot="R90"/>
+<instance part="VUMB1" gate="1" x="196.85" y="246.38" smashed="yes">
+<attribute name="VALUE" x="194.31" y="241.3" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="U$5" gate="G$1" x="233.68" y="223.52" smashed="yes">
+<attribute name="NAME" x="233.68" y="226.06" size="0.8128" layer="95" align="center"/>
+<attribute name="VALUE" x="233.68" y="223.52" size="0.8128" layer="96" align="center"/>
 </instance>
 </instances>
 <busses>
