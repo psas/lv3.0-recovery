@@ -21226,22 +21226,6 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <part name="SUPPLY9" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="1.7K"/>
 <part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="3.3K"/>
-<part name="BATTERY" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X5" device="" package3d_urn="urn:adsk.eagle:package:22469/2"/>
-<part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
-<part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="R15" library="rcl_custom" deviceset="R-US_" device="0402-B-NOSILK" value="150K">
-<attribute name="DIS" value="Digi-Key"/>
-<attribute name="DPN" value="1276-4275-1-ND"/>
-<attribute name="MFR" value="Samsung"/>
-<attribute name="MPN" value="RC1005F6653CS"/>
-</part>
-<part name="R16" library="rcl_custom" deviceset="R-US_" device="0402-B-NOSILK" value="150K">
-<attribute name="DIS" value="Digi-Key"/>
-<attribute name="DPN" value="1276-4275-1-ND"/>
-<attribute name="MFR" value="Samsung"/>
-<attribute name="MPN" value="RC1005F6653CS"/>
-</part>
-<part name="GND3" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -21255,8 +21239,6 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <text x="149.86" y="209.55" size="1.778" layer="97">0805</text>
 <text x="160.02" y="209.55" size="1.778" layer="97">0805</text>
 <text x="22.86" y="154.94" size="1.778" layer="95">Outside World</text>
-<text x="130.81" y="161.29" size="1.778" layer="97">will the charger power the entire board like this? </text>
-<text x="193.04" y="135.89" size="1.778" layer="97">what input voltage to calcualte ratio with? 12?</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
@@ -21429,35 +21411,6 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <instance part="GND1" gate="1" x="50.8" y="139.7" smashed="yes">
 <attribute name="VALUE" x="48.26" y="137.16" size="1.778" layer="96"/>
 </instance>
-<instance part="BATTERY" gate="A" x="135.89" y="143.51" smashed="yes" rot="MR0">
-<attribute name="NAME" x="142.24" y="151.765" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="142.24" y="133.35" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="P+4" gate="1" x="160.02" y="154.94" smashed="yes">
-<attribute name="VALUE" x="160.02" y="158.75" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="GND2" gate="1" x="160.02" y="140.97" smashed="yes">
-<attribute name="VALUE" x="157.48" y="138.43" size="1.778" layer="96"/>
-</instance>
-<instance part="R15" gate="R" x="187.96" y="134.62" smashed="yes" rot="R90">
-<attribute name="DIS" x="187.96" y="134.62" size="1.778" layer="96" rot="R90" display="off"/>
-<attribute name="DPN" x="187.96" y="134.62" size="1.778" layer="96" rot="R90" display="off"/>
-<attribute name="MFR" x="187.96" y="134.62" size="1.778" layer="96" rot="R90" display="off"/>
-<attribute name="MPN" x="187.96" y="134.62" size="1.778" layer="96" rot="R90" display="off"/>
-<attribute name="NAME" x="186.4614" y="130.81" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="191.262" y="130.81" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="R16" gate="R" x="187.96" y="124.46" smashed="yes" rot="R90">
-<attribute name="DIS" x="187.96" y="124.46" size="1.778" layer="96" rot="R90" display="off"/>
-<attribute name="DPN" x="187.96" y="124.46" size="1.778" layer="96" rot="R90" display="off"/>
-<attribute name="MFR" x="187.96" y="124.46" size="1.778" layer="96" rot="R90" display="off"/>
-<attribute name="MPN" x="187.96" y="124.46" size="1.778" layer="96" rot="R90" display="off"/>
-<attribute name="NAME" x="186.4614" y="120.65" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="191.262" y="120.65" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="GND3" gate="1" x="187.96" y="116.84" smashed="yes">
-<attribute name="VALUE" x="185.42" y="114.3" size="1.778" layer="96"/>
-</instance>
 </instances>
 <busses>
 </busses>
@@ -21527,18 +21480,6 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <wire x1="30.48" y1="144.78" x2="50.8" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="144.78" x2="50.8" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="BATTERY" gate="A" pin="2"/>
-<wire x1="138.43" y1="146.05" x2="156.21" y2="146.05" width="0.1524" layer="91"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="156.21" y1="146.05" x2="157.48" y2="146.05" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="143.51" x2="160.02" y2="146.05" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="146.05" x2="157.48" y2="146.05" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="GND3" gate="1" pin="GND"/>
-<pinref part="R16" gate="R" pin="1"/>
 </segment>
 </net>
 <net name="3.3V" class="0">
@@ -21678,16 +21619,6 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <junction x="62.23" y="222.25"/>
 <pinref part="P+3" gate="1" pin="+12V"/>
 </segment>
-<segment>
-<pinref part="BATTERY" gate="A" pin="1"/>
-<pinref part="P+4" gate="1" pin="+12V"/>
-<wire x1="138.43" y1="148.59" x2="160.02" y2="148.59" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="148.59" x2="160.02" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="148.59" x2="187.96" y2="148.59" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="148.59" x2="187.96" y2="139.7" width="0.1524" layer="91"/>
-<junction x="160.02" y="148.59"/>
-<pinref part="R15" gate="R" pin="2"/>
-</segment>
 </net>
 <net name="+18V" class="0">
 <segment>
@@ -21724,23 +21655,6 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <wire x1="40.64" y1="137.16" x2="40.64" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="119.38" x2="68.58" y2="119.38" width="0.1524" layer="91"/>
 <label x="68.58" y="119.38" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="BATT_READ" class="0">
-<segment>
-<pinref part="R16" gate="R" pin="2"/>
-<pinref part="R15" gate="R" pin="1"/>
-<wire x1="187.96" y1="129.54" x2="208.28" y2="129.54" width="0.1524" layer="91"/>
-<junction x="187.96" y="129.54"/>
-<label x="208.28" y="129.54" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="BATT_CHARGE" class="0">
-<segment>
-<pinref part="BATTERY" gate="A" pin="5"/>
-<wire x1="138.43" y1="138.43" x2="152.4" y2="138.43" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="138.43" x2="152.4" y2="121.92" width="0.1524" layer="91"/>
-<label x="152.4" y="121.92" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -22541,13 +22455,6 @@ TSINY TS37GB60-BL3625</text>
 <pinref part="U1" gate="G$1" pin="PA1"/>
 <wire x1="304.8" y1="203.2" x2="294.64" y2="203.2" width="0.1524" layer="91"/>
 <label x="307.34" y="220.98" size="1.778" layer="95" rot="R90"/>
-</segment>
-</net>
-<net name="BATT_READ" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PB5"/>
-<wire x1="254" y1="172.72" x2="246.38" y2="172.72" width="0.1524" layer="91"/>
-<label x="246.38" y="172.72" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>

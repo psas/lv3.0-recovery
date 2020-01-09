@@ -21735,14 +21735,6 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <label x="208.28" y="129.54" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="BATT_CHARGE" class="0">
-<segment>
-<pinref part="BATTERY" gate="A" pin="5"/>
-<wire x1="138.43" y1="138.43" x2="152.4" y2="138.43" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="138.43" x2="152.4" y2="121.92" width="0.1524" layer="91"/>
-<label x="152.4" y="121.92" size="1.778" layer="95"/>
-</segment>
-</net>
 </nets>
 </sheet>
 <sheet>
