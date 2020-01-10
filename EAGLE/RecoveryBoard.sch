@@ -24019,9 +24019,7 @@ TSINY TS37GB60-BL3625</text>
 </net>
 <net name="SENSOR_ON" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PB0"/>
-<wire x1="254" y1="182.88" x2="217.17" y2="182.88" width="0.1524" layer="91"/>
-<wire x1="217.17" y1="182.88" x2="217.17" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="217.17" y1="175.26" x2="217.17" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="217.17" y1="144.78" x2="180.34" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="144.78" x2="180.34" y2="203.2" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="203.2" x2="71.12" y2="203.2" width="0.1524" layer="91"/>
@@ -24031,6 +24029,9 @@ TSINY TS37GB60-BL3625</text>
 <pinref part="U$2" gate="G$1" pin="G"/>
 <wire x1="71.12" y1="175.26" x2="73.66" y2="175.26" width="0.1524" layer="91"/>
 <junction x="71.12" y="175.26"/>
+<pinref part="U1" gate="G$1" pin="PB4"/>
+<wire x1="254" y1="175.26" x2="217.17" y2="175.26" width="0.1524" layer="91"/>
+<label x="217.17" y="153.67" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="SWDIO" class="0">
@@ -24203,15 +24204,18 @@ TSINY TS37GB60-BL3625</text>
 <wire x1="467.36" y1="289.56" x2="436.88" y2="289.56" width="0.1524" layer="91"/>
 <wire x1="436.88" y1="289.56" x2="436.88" y2="271.78" width="0.1524" layer="91"/>
 <wire x1="436.88" y1="271.78" x2="429.26" y2="271.78" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PA11"/>
-<wire x1="429.26" y1="271.78" x2="403.86" y2="271.78" width="0.1524" layer="91"/>
-<wire x1="403.86" y1="271.78" x2="401.32" y2="271.78" width="0.1524" layer="91"/>
-<wire x1="294.64" y1="177.8" x2="393.7" y2="177.8" width="0.1524" layer="91"/>
+<wire x1="429.26" y1="271.78" x2="393.7" y2="271.78" width="0.1524" layer="91"/>
 <wire x1="393.7" y1="177.8" x2="393.7" y2="271.78" width="0.1524" layer="91"/>
-<wire x1="393.7" y1="271.78" x2="401.32" y2="271.78" width="0.1524" layer="91"/>
 <label x="402.59" y="269.24" size="1.778" layer="95"/>
 <pinref part="R11" gate="G$1" pin="1"/>
 <junction x="429.26" y="271.78"/>
+<wire x1="393.7" y1="177.8" x2="345.44" y2="177.8" width="0.1524" layer="91"/>
+<wire x1="345.44" y1="177.8" x2="345.44" y2="127" width="0.1524" layer="91"/>
+<wire x1="345.44" y1="127" x2="241.3" y2="127" width="0.1524" layer="91"/>
+<wire x1="241.3" y1="127" x2="241.3" y2="182.88" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PB0"/>
+<wire x1="241.3" y1="182.88" x2="254" y2="182.88" width="0.1524" layer="91"/>
+<label x="240.03" y="182.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="POT_OUT_AN" class="0">
@@ -24225,6 +24229,7 @@ TSINY TS37GB60-BL3625</text>
 <pinref part="U1" gate="G$1" pin="PA10"/>
 <wire x1="294.64" y1="180.34" x2="382.27" y2="180.34" width="0.1524" layer="91"/>
 <wire x1="382.27" y1="180.34" x2="382.27" y2="223.52" width="0.1524" layer="91"/>
+<label x="299.72" y="180.34" size="1.27" layer="95"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -24336,6 +24341,20 @@ TSINY TS37GB60-BL3625</text>
 <pinref part="U1" gate="G$1" pin="PB5"/>
 <wire x1="254" y1="172.72" x2="246.38" y2="172.72" width="0.1524" layer="91"/>
 <label x="246.38" y="172.72" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="CAN_RX" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PA11"/>
+<wire x1="294.64" y1="177.8" x2="299.72" y2="177.8" width="0.1524" layer="91"/>
+<label x="299.72" y="177.8" size="1.27" layer="95"/>
+</segment>
+</net>
+<net name="CAN_TX" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PA12"/>
+<wire x1="294.64" y1="175.26" x2="299.72" y2="175.26" width="0.1524" layer="91"/>
+<label x="299.72" y="175.26" size="1.27" layer="95"/>
 </segment>
 </net>
 </nets>
