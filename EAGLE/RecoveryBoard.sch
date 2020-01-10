@@ -23728,12 +23728,12 @@ TSINY TS37GB60-BL3625</text>
 </instance>
 <instance part="SUPPLY44" gate="GND" x="71.12" y="162.56" smashed="yes"/>
 <instance part="U$3" gate="G$1" x="275.59" y="322.58" smashed="yes">
-<attribute name="NAME" x="270.51" y="337.82" size="1.778" layer="95"/>
-<attribute name="VALUE" x="270.51" y="332.74" size="1.778" layer="96"/>
+<attribute name="NAME" x="271.78" y="323.85" size="1.778" layer="95"/>
+<attribute name="VALUE" x="265.43" y="327.66" size="1.778" layer="96"/>
 </instance>
 <instance part="U$4" gate="G$1" x="313.69" y="321.31" smashed="yes">
-<attribute name="NAME" x="308.61" y="336.55" size="1.778" layer="95"/>
-<attribute name="VALUE" x="308.61" y="331.47" size="1.778" layer="96"/>
+<attribute name="NAME" x="309.88" y="322.58" size="1.778" layer="95"/>
+<attribute name="VALUE" x="303.53" y="325.12" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY7" gate="G$1" x="285.75" y="358.14" smashed="yes">
 <attribute name="VALUE" x="285.75" y="360.934" size="1.778" layer="96" align="bottom-center"/>
@@ -24124,28 +24124,13 @@ TSINY TS37GB60-BL3625</text>
 <wire x1="78.74" y1="182.88" x2="78.74" y2="185.42" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SUPPLY7" gate="G$1" pin="3.3V"/>
 <pinref part="U$3" gate="G$1" pin="COLL"/>
-<wire x1="285.75" y1="358.14" x2="285.75" y2="355.6" width="0.1524" layer="91"/>
-<wire x1="285.75" y1="349.25" x2="285.75" y2="335.28" width="0.1524" layer="91"/>
-<wire x1="285.75" y1="335.28" x2="293.37" y2="335.28" width="0.1524" layer="91"/>
-<wire x1="293.37" y1="335.28" x2="293.37" y2="359.41" width="0.1524" layer="91"/>
-<junction x="285.75" y="335.28"/>
-<pinref part="U1" gate="G$1" pin="PA5"/>
-<label x="299.72" y="193.04" size="1.27" layer="95"/>
-<wire x1="294.64" y1="193.04" x2="330.2" y2="193.04" width="0.1524" layer="91"/>
-<wire x1="293.37" y1="359.41" x2="330.2" y2="359.41" width="0.1524" layer="91"/>
-<wire x1="330.2" y1="359.41" x2="330.2" y2="193.04" width="0.1524" layer="91"/>
 <pinref part="U$4" gate="G$1" pin="COLL"/>
 <wire x1="323.85" y1="355.6" x2="323.85" y2="334.01" width="0.1524" layer="91"/>
-<junction x="323.85" y="334.01"/>
-<wire x1="332.74" y1="334.01" x2="323.85" y2="334.01" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PA6"/>
-<wire x1="332.74" y1="190.5" x2="294.64" y2="190.5" width="0.1524" layer="91"/>
-<wire x1="332.74" y1="190.5" x2="332.74" y2="334.01" width="0.1524" layer="91"/>
-<label x="299.72" y="190.5" size="1.27" layer="95"/>
-<wire x1="285.75" y1="349.25" x2="285.75" y2="355.6" width="0.1524" layer="91"/>
+<pinref part="SUPPLY7" gate="G$1" pin="3.3V"/>
+<wire x1="285.75" y1="358.14" x2="285.75" y2="355.6" width="0.1524" layer="91"/>
 <wire x1="285.75" y1="355.6" x2="323.85" y2="355.6" width="0.1524" layer="91"/>
+<wire x1="285.75" y1="355.6" x2="285.75" y2="335.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SENSOR2" class="0">
@@ -24307,12 +24292,30 @@ TSINY TS37GB60-BL3625</text>
 <wire x1="265.43" y1="335.28" x2="265.43" y2="339.09" width="0.1524" layer="91"/>
 <label x="265.43" y="339.09" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="PA5"/>
+<wire x1="294.64" y1="193.04" x2="330.2" y2="193.04" width="0.1524" layer="91"/>
+<wire x1="293.37" y1="335.28" x2="293.37" y2="359.41" width="0.1524" layer="91"/>
+<wire x1="293.37" y1="359.41" x2="330.2" y2="359.41" width="0.1524" layer="91"/>
+<wire x1="330.2" y1="359.41" x2="330.2" y2="193.04" width="0.1524" layer="91"/>
+<label x="299.72" y="193.04" size="1.27" layer="95"/>
+<wire x1="293.37" y1="335.28" x2="285.75" y2="335.28" width="0.1524" layer="91"/>
+<label x="293.37" y="341.63" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="CONE" class="0">
 <segment>
 <pinref part="U$4" gate="G$1" pin="CATH"/>
 <wire x1="303.53" y1="334.01" x2="303.53" y2="339.09" width="0.1524" layer="91"/>
 <label x="303.53" y="339.09" size="1.778" layer="95" rot="R90" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="PA6"/>
+<wire x1="332.74" y1="190.5" x2="294.64" y2="190.5" width="0.1524" layer="91"/>
+<wire x1="332.74" y1="190.5" x2="332.74" y2="334.01" width="0.1524" layer="91"/>
+<label x="299.72" y="190.5" size="1.27" layer="95"/>
+<wire x1="332.74" y1="334.01" x2="323.85" y2="334.01" width="0.1524" layer="91"/>
+<label x="332.74" y="326.39" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="N$8" class="0">
