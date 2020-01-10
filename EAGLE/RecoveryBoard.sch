@@ -22530,6 +22530,56 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 </deviceset>
 </devicesets>
 </library>
+<library name="SPK--SMT-0440-S-R--Speaker">
+<packages>
+<package name="SMT-0440-S-R">
+<wire x1="-2" y1="2" x2="2" y2="2" width="0.1524" layer="21"/>
+<wire x1="2" y1="2" x2="2" y2="-2" width="0.1524" layer="21"/>
+<wire x1="2" y1="-2" x2="-2" y2="-2" width="0.1524" layer="21"/>
+<wire x1="-2" y1="-2" x2="-2" y2="2" width="0.1524" layer="21"/>
+<circle x="-1" y="0" radius="0.1" width="0.0762" layer="21"/>
+<circle x="1" y="0" radius="0.1" width="0.0762" layer="21"/>
+<smd name="NEG" x="-1.75" y="0" dx="0.5" dy="1.4" layer="1"/>
+<smd name="POS" x="1.75" y="0" dx="0.5" dy="1.4" layer="1"/>
+<wire x1="1.5" y1="1.75" x2="1.5" y2="1.25" width="0.0762" layer="51"/>
+<wire x1="1.25" y1="1.5" x2="1.75" y2="1.5" width="0.0762" layer="51"/>
+<text x="-1" y="-1.5" size="0.254" layer="51">SMT-0440-S-R</text>
+</package>
+</packages>
+<symbols>
+<symbol name="SMT-0440-S-R">
+<wire x1="0" y1="2.54" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.54" x2="5.08" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="-7.62" x2="5.08" y2="7.62" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="7.62" x2="0" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="2.54" x2="-5.08" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="2.54" x2="-5.08" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="-2.54" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="2.54" x2="-7.62" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="-2.54" x2="-7.62" y2="-2.54" width="0.1524" layer="94"/>
+<pin name="NEG" x="-12.7" y="-2.54" visible="pad" length="middle"/>
+<pin name="POS" x="-12.7" y="2.54" visible="pad" length="middle"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="SMT-0440-S-R">
+<gates>
+<gate name="G$1" symbol="SMT-0440-S-R" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SMT-0440-S-R">
+<connects>
+<connect gate="G$1" pin="NEG" pad="NEG"/>
+<connect gate="G$1" pin="POS" pad="POS"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -22736,6 +22786,8 @@ This package is identical to 0805-B, but has its tPlace silkscreen layer removed
 <part name="R22" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100m"/>
 <part name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="0.1uF"/>
 <part name="SUPPLY18" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="U$7" library="SPK--SMT-0440-S-R--Speaker" deviceset="SMT-0440-S-R" device=""/>
+<part name="SUPPLY19" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -23757,6 +23809,8 @@ TSINY TS37GB60-BL3625</text>
 <attribute name="NAME" x="461.2386" y="271.78" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="464.058" y="270.51" size="1.778" layer="96" rot="R270"/>
 </instance>
+<instance part="U$7" gate="G$1" x="261.62" y="147.32" smashed="yes"/>
+<instance part="SUPPLY19" gate="GND" x="248.92" y="134.62" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -23889,6 +23943,11 @@ TSINY TS37GB60-BL3625</text>
 <segment>
 <pinref part="R14" gate="G$1" pin="2"/>
 <pinref part="SUPPLY39" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U$7" gate="G$1" pin="NEG"/>
+<wire x1="248.92" y1="144.78" x2="248.92" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="SUPPLY19" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="LAMOTOR+" class="0">
@@ -24358,6 +24417,14 @@ TSINY TS37GB60-BL3625</text>
 <pinref part="U1" gate="G$1" pin="PA12"/>
 <wire x1="294.64" y1="175.26" x2="299.72" y2="175.26" width="0.1524" layer="91"/>
 <label x="299.72" y="175.26" size="1.27" layer="95"/>
+</segment>
+</net>
+<net name="N$24" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PB1"/>
+<wire x1="254" y1="180.34" x2="248.92" y2="180.34" width="0.1524" layer="91"/>
+<wire x1="248.92" y1="180.34" x2="248.92" y2="149.86" width="0.1524" layer="91"/>
+<pinref part="U$7" gate="G$1" pin="POS"/>
 </segment>
 </net>
 </nets>
