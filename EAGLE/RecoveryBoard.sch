@@ -23311,19 +23311,16 @@ Pad definition corrected 2006.05.15, librarian@cadsoft.de
 <library name="BPR-301">
 <packages>
 <package name="BPR-301">
-<wire x1="0" y1="0" x2="8.9" y2="0" width="0.127" layer="21"/>
-<wire x1="8.9" y1="0" x2="17.8" y2="0" width="0.127" layer="21"/>
-<wire x1="17.8" y1="0" x2="17.8" y2="5" width="0.127" layer="21"/>
-<wire x1="17.8" y1="5" x2="8.9" y2="5" width="0.127" layer="21"/>
-<wire x1="8.9" y1="5" x2="0" y2="5" width="0.127" layer="21"/>
-<wire x1="0" y1="5" x2="0" y2="0" width="0.127" layer="21"/>
-<pad name="AN" x="2.53" y="2.5" drill="0.6"/>
-<pad name="CAT" x="5.07" y="2.5" drill="0.6"/>
-<pad name="EMIT" x="12.73" y="2.5" drill="0.6"/>
-<pad name="COLL" x="15.27" y="2.5" drill="0.6"/>
-<wire x1="8.9" y1="5" x2="8.9" y2="0" width="0.0762" layer="21" style="shortdash"/>
-<text x="1.27" y="5.08" size="1.27" layer="21">DIODE</text>
-<text x="12.7" y="5.08" size="1.27" layer="21">NPN</text>
+<pad name="AN" x="-6.37" y="0" drill="0.6"/>
+<pad name="CAT" x="-3.83" y="0" drill="0.6"/>
+<pad name="EMIT" x="3.83" y="0" drill="0.6"/>
+<pad name="COLL" x="6.37" y="0" drill="0.6"/>
+<text x="-7.73" y="2.08" size="1.27" layer="21">DIODE</text>
+<text x="3.7" y="2.08" size="1.27" layer="21">NPN</text>
+<wire x1="-8" y1="-2" x2="-8" y2="2" width="0.1524" layer="21"/>
+<wire x1="-8" y1="2" x2="8" y2="2" width="0.1524" layer="21"/>
+<wire x1="8" y1="2" x2="8" y2="-2" width="0.1524" layer="21"/>
+<wire x1="8" y1="-2" x2="-8" y2="-2" width="0.1524" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -23637,6 +23634,7 @@ Pad definition corrected 2006.05.15, librarian@cadsoft.de
 <wire x1="-13.97" y1="-19.05" x2="-13.97" y2="16.51" width="0.254" layer="94"/>
 <text x="0" y="7.62" size="1.6764" layer="95" align="center">&gt;NAME</text>
 <text x="0" y="5.08" size="1.6764" layer="96" align="center">&gt;VALUE</text>
+<pin name="EP" x="3.81" y="-24.13" length="middle" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -23653,6 +23651,7 @@ Pad definition corrected 2006.05.15, librarian@cadsoft.de
 <connect gate="G$1" pin="COMPI" pad="COMPI"/>
 <connect gate="G$1" pin="COMPV" pad="COMPV"/>
 <connect gate="G$1" pin="CSP" pad="CSP"/>
+<connect gate="G$1" pin="EP" pad="EP"/>
 <connect gate="G$1" pin="GND" pad="GND"/>
 <connect gate="G$1" pin="NTC" pad="NTC"/>
 <connect gate="G$1" pin="SW" pad="SW"/>
@@ -24586,9 +24585,9 @@ DISARM</text>
 <attribute name="NAME" x="190.246" y="161.925" size="1.016" layer="95"/>
 <attribute name="VALUE" x="190.246" y="157.099" size="1.016" layer="96"/>
 </instance>
-<instance part="C14" gate="CE" x="196.85" y="161.29" smashed="yes">
-<attribute name="NAME" x="197.866" y="161.925" size="1.016" layer="95"/>
-<attribute name="VALUE" x="197.866" y="157.099" size="1.016" layer="96"/>
+<instance part="C14" gate="CE" x="196.85" y="158.75" smashed="yes">
+<attribute name="NAME" x="197.866" y="159.385" size="1.016" layer="95"/>
+<attribute name="VALUE" x="197.866" y="154.559" size="1.016" layer="96"/>
 </instance>
 <instance part="R20" gate="R" x="196.85" y="167.64" smashed="yes" rot="R90">
 <attribute name="NAME" x="195.3514" y="163.83" size="1.016" layer="95" rot="R90"/>
@@ -24710,6 +24709,10 @@ DISARM</text>
 <wire x1="148.59" y1="168.91" x2="148.59" y2="158.75" width="0.1524" layer="91"/>
 <wire x1="148.59" y1="158.75" x2="166.37" y2="158.75" width="0.1524" layer="91"/>
 <junction x="166.37" y="158.75"/>
+<pinref part="U$5" gate="G$1" pin="EP"/>
+<wire x1="171.45" y1="161.29" x2="171.45" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="171.45" y1="157.48" x2="166.37" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="166.37" y1="157.48" x2="166.37" y2="158.75" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="SUPPLY16" gate="GND" pin="GND"/>
@@ -24739,7 +24742,7 @@ DISARM</text>
 <segment>
 <pinref part="C14" gate="CE" pin="2"/>
 <pinref part="SUPPLY15" gate="GND" pin="GND"/>
-<wire x1="196.85" y1="156.21" x2="196.85" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="196.85" y1="153.67" x2="196.85" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C16" gate="CE" pin="2"/>
@@ -25159,6 +25162,13 @@ DISARM</text>
 <junction x="114.3" y="173.99"/>
 </segment>
 </net>
+<net name="N$30" class="0">
+<segment>
+<pinref part="C14" gate="CE" pin="1"/>
+<pinref part="R20" gate="R" pin="1"/>
+<wire x1="196.85" y1="161.29" x2="196.85" y2="162.56" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -25501,6 +25511,7 @@ From Telemetrum</text>
 <wire x1="468.63" y1="294.64" x2="453.39" y2="294.64" width="0.1524" layer="91"/>
 <wire x1="453.39" y1="294.64" x2="453.39" y2="289.56" width="0.1524" layer="91"/>
 <pinref part="SUPPLY38" gate="GND" pin="GND"/>
+<label x="455.93" y="294.64" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="LA" gate="A" pin="5"/>
@@ -25578,13 +25589,6 @@ From Telemetrum</text>
 <pinref part="LA" gate="A" pin="1"/>
 <wire x1="427.99" y1="158.75" x2="427.99" y2="215.9" width="0.1524" layer="91"/>
 <wire x1="427.99" y1="215.9" x2="461.01" y2="215.9" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="LAMOTOR-" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="OUT2"/>
-<wire x1="483.87" y1="161.29" x2="509.27" y2="161.29" width="0.1524" layer="91"/>
-<label x="509.27" y="161.29" size="1.6764" layer="95"/>
 </segment>
 </net>
 <net name="IN1" class="0">
@@ -25871,11 +25875,14 @@ From Telemetrum</text>
 <junction x="193.04" y="190.5"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="LAMOTOR-" class="0">
 <segment>
 <pinref part="LA" gate="A" pin="2"/>
 <wire x1="510.54" y1="161.29" x2="510.54" y2="213.36" width="0.1524" layer="91"/>
 <wire x1="510.54" y1="213.36" x2="461.01" y2="213.36" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="OUT2"/>
+<wire x1="483.87" y1="161.29" x2="510.54" y2="161.29" width="0.1524" layer="91"/>
+<label x="509.27" y="161.29" size="1.6764" layer="95"/>
 </segment>
 </net>
 <net name="DCM_PWM" class="0">
@@ -25905,12 +25912,13 @@ From Telemetrum</text>
 <label x="299.72" y="180.34" size="1.27" layer="95"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="DCM+" class="0">
 <segment>
 <pinref part="DCMOTOR" gate="A" pin="1"/>
 <wire x1="426.72" y1="297.18" x2="468.63" y2="297.18" width="0.1524" layer="91"/>
 <pinref part="Q6" gate="G$1" pin="D"/>
 <wire x1="426.72" y1="314.96" x2="426.72" y2="297.18" width="0.1524" layer="91"/>
+<label x="447.04" y="298.45" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -25968,11 +25976,12 @@ From Telemetrum</text>
 <pinref part="U$4" gate="G$1" pin="ANOD"/>
 </segment>
 </net>
-<net name="N$8" class="0">
+<net name="PULSEOUT" class="0">
 <segment>
 <pinref part="DCMOTOR" gate="A" pin="5"/>
 <wire x1="468.63" y1="287.02" x2="459.74" y2="287.02" width="0.1524" layer="91"/>
 <pinref part="R13" gate="G$1" pin="1"/>
+<label x="454.66" y="287.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="DCM_SPEED" class="0">
