@@ -24089,8 +24089,8 @@ AO6405
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_B_L" device=""/>
 <part name="FRAME3" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_C_L" device=""/>
-<part name="LA" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X5" device="" package3d_urn="urn:adsk.eagle:package:22469/2"/>
-<part name="DCMOTOR" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X5" device="" package3d_urn="urn:adsk.eagle:package:22469/2"/>
+<part name="J2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X5" device="" package3d_urn="urn:adsk.eagle:package:22469/2"/>
+<part name="J1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X5" device="" package3d_urn="urn:adsk.eagle:package:22469/2"/>
 <part name="C5" library="oresat-rcl" deviceset="C-EU" device="0603-B-NOSILK" value="10u">
 <attribute name="DIS" value="Digi-Key"/>
 <attribute name="DPN" value="1276-1001-1-ND"/>
@@ -24299,7 +24299,9 @@ AO6405
 TO
 DISARM</text>
 <text x="40.64" y="203.2" size="1.778" layer="97">19V umbilical</text>
-<text x="212.09" y="257.81" size="1.778" layer="97">Do we still need an Arm input? there is no state where the board has power and is disarmed...this would free up a pin for a lock button</text>
+<text x="204.47" y="273.05" size="1.778" layer="97">Do we still need an Arm input? there is no state where the board has power and is disarmed...this would free up a pin for a lock button</text>
+<text x="292.1" y="251.46" size="1.778" layer="97">12V power switch</text>
+<text x="294.64" y="248.92" size="1.778" layer="97">Usually on</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
@@ -25009,16 +25011,17 @@ DISARM</text>
 <junction x="140.97" y="218.44"/>
 </segment>
 </net>
-<net name="N$15" class="0">
+<net name="ARM-IN" class="0">
 <segment>
 <pinref part="JP2" gate="A" pin="6"/>
 <wire x1="63.5" y1="190.5" x2="80.01" y2="190.5" width="0.1524" layer="91"/>
 <wire x1="80.01" y1="190.5" x2="80.01" y2="246.38" width="0.1524" layer="91"/>
 <wire x1="80.01" y1="246.38" x2="247.65" y2="246.38" width="0.1524" layer="91"/>
 <pinref part="R23" gate="R" pin="2"/>
+<label x="231.14" y="246.38" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="VBAT" class="0">
+<net name="ARM-OUT" class="0">
 <segment>
 <pinref part="JP2" gate="A" pin="7"/>
 <wire x1="63.5" y1="187.96" x2="76.2" y2="187.96" width="0.1524" layer="91"/>
@@ -25026,6 +25029,7 @@ DISARM</text>
 <wire x1="76.2" y1="242.57" x2="247.65" y2="242.57" width="0.1524" layer="91"/>
 <pinref part="R25" gate="R" pin="1"/>
 <wire x1="247.65" y1="236.22" x2="247.65" y2="242.57" width="0.1524" layer="91"/>
+<label x="231.14" y="242.57" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$16" class="0">
@@ -25063,7 +25067,7 @@ DISARM</text>
 <junction x="222.25" y="201.93"/>
 </segment>
 </net>
-<net name="N$23" class="0">
+<net name="VBAT" class="0">
 <segment>
 <pinref part="U$5" gate="G$1" pin="BATT"/>
 <pinref part="C17" gate="CE" pin="1"/>
@@ -25089,6 +25093,7 @@ DISARM</text>
 <wire x1="280.67" y1="214.63" x2="285.75" y2="214.63" width="0.1524" layer="91"/>
 <pinref part="R25" gate="R" pin="2"/>
 <wire x1="247.65" y1="201.93" x2="247.65" y2="226.06" width="0.1524" layer="91"/>
+<label x="259.08" y="201.93" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$22" class="0">
@@ -25286,11 +25291,11 @@ From Telemetrum</text>
 <attribute name="SHEET" x="538.48" y="1.27" size="2.54" layer="94"/>
 <attribute name="DRAWING_NAME" x="469.9" y="19.05" size="2.54" layer="94"/>
 </instance>
-<instance part="LA" gate="A" x="458.47" y="210.82" smashed="yes" rot="MR0">
+<instance part="J2" gate="A" x="458.47" y="210.82" smashed="yes" rot="MR0">
 <attribute name="NAME" x="464.82" y="219.075" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="464.82" y="200.66" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="DCMOTOR" gate="A" x="471.17" y="292.1" smashed="yes">
+<instance part="J1" gate="A" x="471.17" y="292.1" smashed="yes">
 <attribute name="NAME" x="464.82" y="300.355" size="1.778" layer="95"/>
 <attribute name="VALUE" x="464.82" y="281.94" size="1.778" layer="96"/>
 </instance>
@@ -25507,14 +25512,14 @@ From Telemetrum</text>
 <pinref part="R32" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="DCMOTOR" gate="A" pin="2"/>
+<pinref part="J1" gate="A" pin="2"/>
 <wire x1="468.63" y1="294.64" x2="453.39" y2="294.64" width="0.1524" layer="91"/>
 <wire x1="453.39" y1="294.64" x2="453.39" y2="289.56" width="0.1524" layer="91"/>
 <pinref part="SUPPLY38" gate="GND" pin="GND"/>
 <label x="455.93" y="294.64" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="LA" gate="A" pin="5"/>
+<pinref part="J2" gate="A" pin="5"/>
 <wire x1="461.01" y1="205.74" x2="476.25" y2="205.74" width="0.1524" layer="91"/>
 <pinref part="SUPPLY40" gate="GND" pin="GND"/>
 <wire x1="476.25" y1="205.74" x2="476.25" y2="199.39" width="0.1524" layer="91"/>
@@ -25586,7 +25591,7 @@ From Telemetrum</text>
 <pinref part="IC1" gate="G$1" pin="OUT1"/>
 <wire x1="453.39" y1="158.75" x2="427.99" y2="158.75" width="0.1524" layer="91"/>
 <label x="425.45" y="161.29" size="1.6764" layer="95"/>
-<pinref part="LA" gate="A" pin="1"/>
+<pinref part="J2" gate="A" pin="1"/>
 <wire x1="427.99" y1="158.75" x2="427.99" y2="215.9" width="0.1524" layer="91"/>
 <wire x1="427.99" y1="215.9" x2="461.01" y2="215.9" width="0.1524" layer="91"/>
 </segment>
@@ -25684,7 +25689,7 @@ From Telemetrum</text>
 <label x="400.05" y="292.1" size="1.6764" layer="95"/>
 <label x="302.26" y="187.96" size="1.27" layer="95"/>
 <wire x1="389.89" y1="259.08" x2="389.89" y2="292.1" width="0.1524" layer="91"/>
-<pinref part="DCMOTOR" gate="A" pin="3"/>
+<pinref part="J1" gate="A" pin="3"/>
 <wire x1="468.63" y1="292.1" x2="421.64" y2="292.1" width="0.1524" layer="91"/>
 <wire x1="421.64" y1="292.1" x2="389.89" y2="292.1" width="0.1524" layer="91"/>
 <pinref part="R12" gate="G$1" pin="1"/>
@@ -25798,7 +25803,7 @@ From Telemetrum</text>
 <junction x="257.81" y="231.14"/>
 </segment>
 <segment>
-<pinref part="LA" gate="A" pin="3"/>
+<pinref part="J2" gate="A" pin="3"/>
 <wire x1="461.01" y1="210.82" x2="491.49" y2="210.82" width="0.1524" layer="91"/>
 <wire x1="491.49" y1="210.82" x2="491.49" y2="220.98" width="0.1524" layer="91"/>
 <pinref part="SUPPLY41" gate="G$1" pin="3.3V"/>
@@ -25877,7 +25882,7 @@ From Telemetrum</text>
 </net>
 <net name="LAMOTOR-" class="0">
 <segment>
-<pinref part="LA" gate="A" pin="2"/>
+<pinref part="J2" gate="A" pin="2"/>
 <wire x1="510.54" y1="161.29" x2="510.54" y2="213.36" width="0.1524" layer="91"/>
 <wire x1="510.54" y1="213.36" x2="461.01" y2="213.36" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="OUT2"/>
@@ -25887,7 +25892,7 @@ From Telemetrum</text>
 </net>
 <net name="DCM_PWM" class="0">
 <segment>
-<pinref part="DCMOTOR" gate="A" pin="4"/>
+<pinref part="J1" gate="A" pin="4"/>
 <wire x1="468.63" y1="289.56" x2="429.26" y2="289.56" width="0.1524" layer="91"/>
 <wire x1="429.26" y1="289.56" x2="393.7" y2="289.56" width="0.1524" layer="91"/>
 <wire x1="393.7" y1="264.16" x2="393.7" y2="289.56" width="0.1524" layer="91"/>
@@ -25903,7 +25908,7 @@ From Telemetrum</text>
 </net>
 <net name="POT_OUT_AN" class="0">
 <segment>
-<pinref part="LA" gate="A" pin="4"/>
+<pinref part="J2" gate="A" pin="4"/>
 <wire x1="461.01" y1="208.28" x2="488.95" y2="208.28" width="0.1524" layer="91"/>
 <wire x1="488.95" y1="208.28" x2="488.95" y2="180.34" width="0.1524" layer="91"/>
 <wire x1="488.95" y1="180.34" x2="294.64" y2="180.34" width="0.1524" layer="91"/>
@@ -25914,7 +25919,7 @@ From Telemetrum</text>
 </net>
 <net name="DCM+" class="0">
 <segment>
-<pinref part="DCMOTOR" gate="A" pin="1"/>
+<pinref part="J1" gate="A" pin="1"/>
 <wire x1="426.72" y1="297.18" x2="468.63" y2="297.18" width="0.1524" layer="91"/>
 <pinref part="Q6" gate="G$1" pin="D"/>
 <wire x1="426.72" y1="314.96" x2="426.72" y2="297.18" width="0.1524" layer="91"/>
@@ -25978,7 +25983,7 @@ From Telemetrum</text>
 </net>
 <net name="PULSEOUT" class="0">
 <segment>
-<pinref part="DCMOTOR" gate="A" pin="5"/>
+<pinref part="J1" gate="A" pin="5"/>
 <wire x1="468.63" y1="287.02" x2="459.74" y2="287.02" width="0.1524" layer="91"/>
 <pinref part="R13" gate="G$1" pin="1"/>
 <label x="454.66" y="287.02" size="1.778" layer="95"/>
